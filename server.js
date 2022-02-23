@@ -6,12 +6,16 @@ const http = require('http');
 const hostname = 'localhost';
 const port = 3000;
 
+const path = require('path');
+const fs = require('fs');
+
 // The http.createServer() method turns your computer into an HTTP server, by creating a server object
 //Request Header: This type of headers contains information about the fetched request by the client.
 // set status code to 200 which is ok
 // set the response header with a name and value
 // Calling the writable.end() method signals that no more data will be written to the Writable. The optional chunk and encoding arguments allow one final additional chunk of data to be written immediately before closing the stream.
 
+// currently server will give the same response for every type of request
 const server = http.createServer((req, res) => {
     console.log(req.headers);
     res.statusCode = 200;
